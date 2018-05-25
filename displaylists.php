@@ -28,21 +28,19 @@ tr:nth-child(even) {
 </head>
 <body>
 
-<h2>List Items Table</h2>
+<h2>List Table</h2>
 
 <table>
   <tr>
     <th>Id</th>
     <th>List</th>
-    <th>Task</th>
   </tr>
 <?php
 // Create connection
 $conn =  connectdb($servername, $username, $password, $dbname);
 
-$sql = "SELECT id, list_id,description FROM list";
+$sql = "SELECT id,description FROM list";
 $result = $conn->query($sql);
-
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
